@@ -7,16 +7,20 @@
   
   
   
-  <title>Willing&#39;Blog</title>
+  <title>Hexo+GitHub������˲��� | Willing&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="Willing&#39;Blog">
+  <meta name="description" content="1.׼������1.��װnodejsȥ��������nodejs��װ(�Ƽ���װ4.x),��װ֮���������� node -v,����ɹ�˵��node����ok,���ɹ���ȥ������������һ��.2.��װhexoʹ������ npm install hexo -g,ִ��hexo -v �鿴�汾,���̳��ʺ�3.1.1���ϰ汾3.��װgit">
+<meta name="keywords" content="hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo+GitHub������˲���">
 <meta property="og:url" content="http://yoursite.com/2018/09/17/hexo搭建博客/index.html">
 <meta property="og:site_name" content="Willing&#39;Blog">
+<meta property="og:description" content="1.׼������1.��װnodejsȥ��������nodejs��װ(�Ƽ���װ4.x),��װ֮���������� node -v,����ɹ�˵��node����ok,���ɹ���ȥ������������һ��.2.��װhexoʹ������ npm install hexo -g,ִ��hexo -v �鿴�汾,���̳��ʺ�3.1.1���ϰ汾3.��װgit">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-17T15:59:26.529Z">
+<meta property="og:updated_time" content="2018-09-17T16:29:50.717Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Willing&#39;Blog">
+<meta name="twitter:title" content="Hexo+GitHub������˲���">
+<meta name="twitter:description" content="1.׼������1.��װnodejsȥ��������nodejs��װ(�Ƽ���װ4.x),��װ֮���������� node -v,����ɹ�˵��node����ok,���ɹ���ȥ������������һ��.2.��װhexoʹ������ npm install hexo -g,ִ��hexo -v �鿴�汾,���̳��ʺ�3.1.1���ϰ汾3.��װgit">
   
     <link rel="alternative" href="/atom.xml" title="Willing&#39;Blog" type="application/atom+xml">
   
@@ -192,7 +196,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        
+                        <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
                     </div>
                 </section>
                 
@@ -283,10 +287,54 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo+GitHub������˲���
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <h2 id="1-׼������"><a href="#1-׼������" class="headerlink" title="1.׼������"></a>1.׼������</h2><p>1.��װnodejs<br>ȥ��������nodejs��װ(�Ƽ���װ4.x),��װ֮���������� node -v,����ɹ�˵��node����ok,���ɹ���ȥ������������һ��.<br>2.��װhexo<br>ʹ������ npm install hexo -g,ִ��hexo -v �鿴�汾,���̳��ʺ�3.1.1���ϰ汾<br>3.��װgit<br><a id="more"></a><br>ȥ��������git��װ<br>4.����git<br>����ssh˽Կ,�ϴ���github��</p>
+<h2 id="2-github-pages��˵��"><a href="#2-github-pages��˵��" class="headerlink" title="2.github-pages��˵��"></a>2.github-pages��˵��</h2><ul>
+<li>github��������ҳ,һ����github-page(������ҳ),һ������Ŀ��ҳ,���̳���Ը�����ҳ</li>
+<li>github-page��Ҫ��hexo���ͷ�����repository��master(����)����</li>
+<li>github�ĸ�����ҳҪ��repository�����ƺ�usernameһ�£�����username��tom����repository������Ϊtom.github.io<h2 id="3-ʹ��hexoд����"><a href="#3-ʹ��hexoд����" class="headerlink" title="3.ʹ��hexoд����"></a>3.ʹ��hexoд����</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- �½�һ���ļ���myblog,</span><br><span class="line">- �Ҽ�git bash hereʹ��git��shell</span><br><span class="line">- ��shell������hexo init,�س�ִ��</span><br><span class="line">- ��shell������hexo g ,�س�</span><br><span class="line">- ��shell��hexo s,�س�</span><br><span class="line">- ȥ���������http://localhost:4000,���ʵ���ҳ,Ȼ����shell��ctrl cֹͣ</span><br><span class="line">- ��shell��hexo new &quot;first-blog&quot;,�س�</span><br><span class="line">- ��shell��hexo g ,�س�</span><br><span class="line">- ��shell��hexo s ,�س�,�ڷ���</span><br><span class="line">- ok,�ڱ��ز��Ծ�û������</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="4-������github"><a href="#4-������github" class="headerlink" title="4.������github"></a>4.������github</h2><p>����Ŀ����¼�µ�.config.yml,�ҵ�deploy,�޸�����:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"> - type: git</span><br><span class="line">   repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">     branch: branch</span><br><span class="line">  message: message</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-��������"><a href="#5-��������" class="headerlink" title="5.��������"></a>5.��������</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br><span class="line">hexo clean  ɾ��public�ļ���</span><br></pre></td></tr></table></figure>
+<h2 id="6-��������"><a href="#6-��������" class="headerlink" title="6.��������"></a>6.��������</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">��������ȥ��</span><br><span class="line">npm install hexo-deployer-git --save ��װ������</span><br></pre></td></tr></table></figure>
+<h2 id="7-��������"><a href="#7-��������" class="headerlink" title="7.��������"></a>7.��������</h2><p>hexo��2��_config.yml�ļ���һ���Ǹ�Ŀ¼�µ�ȫ�ֵ�_config.yml��һ���Ǹ���theme�µģ�</p>
+<ul>
+<li>�޸�����</li>
+</ul>
+<p>�޸�_config.yml�е�theme: landscape��Ϊtheme: yilia��Ȼ������ִ��hexo g���������ɡ�<br>�������һЩĪ����������⣬������ִ��hexo clean������һ��public�����ݣ�Ȼ�������������ɺͷ�����</p>
+<p>ȫ�ֵ�_config.yml�����涼��һЩȫ�����ã�ÿ����������˼���Ƚϼ����ˣ����ԾͲ�����ϸ�����ˡ�<br>��Ҫ�ر�ע��ĵط��ǣ�ð�ź��������һ���ո񣬷�����ܻ�����⡣</p>
+<p>���Ĳο��˲��ͣ�<a href="https://geeksblog.cc/hexo-githup-blog.html" target="_blank" rel="noopener">�ο�����</a></p>
+
       
     </div>
     
@@ -294,12 +342,12 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2018/09/17/hexo搭建博客/"></a></p>
+        <p><span>本文标题:</span><a  href="/2018/09/17/hexo搭建博客/">Hexo+GitHub������˲���</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Willing 的个人博客">Willing</a></p>
         <p><span>发布时间:</span>2018年09月17日 - 23时59分</p>
-        <p><span>最后更新:</span>2018年09月17日 - 23时59分</p>
+        <p><span>最后更新:</span>2018年09月18日 - 00时29分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/09/17/hexo搭建博客/" title="">http://yoursite.com/2018/09/17/hexo搭建博客/</a>
+            <span>原始链接:</span><a class="post-url" href="/2018/09/17/hexo搭建博客/" title="Hexo+GitHub������˲���">http://yoursite.com/2018/09/17/hexo搭建博客/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/09/17/hexo搭建博客/　　作者: Willing" title=""></span>
         </p>
         <p>
@@ -325,7 +373,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-׼������"><span class="toc-number">1.</span> <span class="toc-text">1.׼������</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-github-pages��˵��"><span class="toc-number">2.</span> <span class="toc-text">2.github-pages��˵��</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-ʹ��hexoд����"><span class="toc-number">3.</span> <span class="toc-text">3.ʹ��hexoд����</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-������github"><span class="toc-number">4.</span> <span class="toc-text">4.������github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-��������"><span class="toc-number">5.</span> <span class="toc-text">5.��������</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-��������"><span class="toc-number">6.</span> <span class="toc-text">6.��������</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-��������"><span class="toc-number">7.</span> <span class="toc-text">7.��������</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -407,7 +455,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/09/17/hexo搭建博客/">hexo搭建博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/17/线程和并发--基础操作/">线程和并发--基础操作</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/09/17/hexo搭建博客/">Hexo+GitHub������˲���</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/17/线程和并发--基础操作/">线程和并发--基础操作</a></li></ul>
     
 <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
