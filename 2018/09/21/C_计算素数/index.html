@@ -7,19 +7,23 @@
   
   
   
-  <title>线程和并发--基础操作 | Willing&#39;Blog</title>
+  <title>素数计算 | Willing&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="概述并发和并行是即相似又有区别：  并行：指两个或多个事件在同一时刻发生； 并发：指两个或多个事件在同一时间段内发生。">
+  <meta name="description" content="1.打印100~200之间的素数  素数：当一个数的因子只有1和它本身的时候就是素数。特殊也是最小的质数是2。">
+<meta name="keywords" content="C语言">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线程和并发--基础操作">
-<meta property="og:url" content="http://yoursite.com/2018/09/17/线程和并发--基础操作/index.html">
+<meta property="og:title" content="素数计算">
+<meta property="og:url" content="http://yoursite.com/2018/09/21/C_计算素数/index.html">
 <meta property="og:site_name" content="Willing&#39;Blog">
-<meta property="og:description" content="概述并发和并行是即相似又有区别：  并行：指两个或多个事件在同一时刻发生； 并发：指两个或多个事件在同一时间段内发生。">
+<meta property="og:description" content="1.打印100~200之间的素数  素数：当一个数的因子只有1和它本身的时候就是素数。特殊也是最小的质数是2。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-09T08:29:51.000Z">
+<meta property="og:image" content="http://yoursite.com/2018/09/21/C_计算素数/乘法口诀表.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/21/C_计算素数/判断闰年.png">
+<meta property="og:updated_time" content="2018-09-21T13:41:25.183Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线程和并发--基础操作">
-<meta name="twitter:description" content="概述并发和并行是即相似又有区别：  并行：指两个或多个事件在同一时刻发生； 并发：指两个或多个事件在同一时间段内发生。">
+<meta name="twitter:title" content="素数计算">
+<meta name="twitter:description" content="1.打印100~200之间的素数  素数：当一个数的因子只有1和它本身的时候就是素数。特殊也是最小的质数是2。">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/21/C_计算素数/乘法口诀表.png">
   
     <link rel="alternative" href="/atom.xml" title="Willing&#39;Blog" type="application/atom+xml">
   
@@ -270,11 +274,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-线程和并发--基础操作" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-C_计算素数" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2018/09/17/线程和并发--基础操作/" class="article-date">
-      <time datetime="2018-09-17T15:56:00.570Z" itemprop="datePublished">2018-09-17</time>
+      <a  href="/2018/09/21/C_计算素数/" class="article-date">
+      <time datetime="2018-09-21T07:44:24.243Z" itemprop="datePublished">2018-09-21</time>
 </a>
 
     </div>
@@ -288,7 +292,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      线程和并发--基础操作
+      素数计算
     </h1>
   
 
@@ -297,8 +301,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/lang/">lang</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C语言/">C语言</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -306,49 +318,30 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><strong>并发和并行</strong>是即相似又有区别：</p>
-<ul>
-<li>并行：指两个或多个事件在同一时刻发生；</li>
-<li>并发：指两个或多个事件在同一时间段内发生。<a id="more"></a>
-<strong>进程</strong>是指一个内存中运行中的应用程序。每个进程都有自己独立的一块内存空间，一个应用程序可以同时启动多个进程。比如在Windows系统中，一个运行的abc.exe就是一个进程。<br>那么我们此时就可以处理同时玩游戏和听音乐的问题了，我们可以设计成两个程序，一个专门负责玩游戏，一个专门负责听音乐。<br>但是问题来了，要是要设计一个植物大战僵尸游戏，我得开N个进程才能完成多个功能，这样的设计显然是不合理的。<br>更何况大多数操作系统都不需要一个进程访问其他进程的内存空间，也就是说进程之间的通信很不方便。<br>此时我们得引入“线程”这门技术，来解决这个问题。</li>
-</ul>
-<p><strong>线程</strong>是指进程中的一个执行任务(控制单元)，一个进程可以同时并发运行多个线程，如：多线程下载软件。<br>一个进程至少有一个线程，为了提高效率，可以在一个进程中开启多个执行任务,即多线程。<br>多进程：操作系统中同时运行的多个程序。<br>多线程：在同一个进程中同时运行的多个任务。<br>我们查看Windows环境下的任务管理器：<br>  在操作系统中允许多个任务，每一个任务就是一个进程，每一个进程也可以同时执行多个任务，每一个任务就是线程。</p>
-<p><strong>多线程</strong>作为一种多任务、并发的工作方式，当然有其存在优势：</p>
-<ul>
-<li>进程之前不能共享内存，而线程之间共享内存(堆内存)则很简单。</li>
-<li>系统创建进程时需要为该进程重新分配系统资源,创建线程则代价小很多,因此实现多任务并发时,多线程效率更高.</li>
-<li>Java语言本身内置多线程功能的支持,而不是单纯第作为底层系统的调度方式,从而简化了多线程编程.</li>
-</ul>
-<h2 id="用java语言创建进程"><a href="#用java语言创建进程" class="headerlink" title="用java语言创建进程"></a>用java语言创建进程</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import java.io.IOException;</span><br><span class="line">//如何用java语言开启一个进程</span><br><span class="line">public class ProcessDemo &#123;</span><br><span class="line">	public static void main(String[] args) throws IOException&#123;</span><br><span class="line">		//方式一：使用Runtime的exec方法</span><br><span class="line">		Runtime.getRuntime().exec(&quot;notepad&quot;);</span><br><span class="line">		//方式二：使用ProcessBuilder类中的start方法</span><br><span class="line">		ProcessBuilder pb = new ProcessBuilder(&quot;notepad&quot;);</span><br><span class="line">		pb.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="创建和启动线程"><a href="#创建和启动线程" class="headerlink" title="创建和启动线程"></a>创建和启动线程</h2><h3 id="方式一：继承Thread类"><a href="#方式一：继承Thread类" class="headerlink" title="方式一：继承Thread类"></a>方式一：继承Thread类</h3><ol>
-<li>自定义类继承于Thread类，那么该自定义类就是线程类；</li>
-</ol>
-<p>2．覆写run方法，将线程运行的代码存放在run中；</p>
-<p>3．创建自定义类的对象，即线程对象；</p>
-<p>4．调用线程对象的start方法，启动线程。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">package thread_create;</span><br><span class="line">//继承方式 创建和启动线程</span><br><span class="line">class MusicThread extends Thread&#123;      //MusicThread是线程子类</span><br><span class="line">	public void run() &#123;               //子类必须重写run()方法</span><br><span class="line">		for(int i = 0 ;i &lt; 50;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			System.out.println(&quot;听音乐&quot;+i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">public class ExtendsThreadDemo &#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		for(int i = 0 ;i &lt; 50;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			System.out.println(&quot;玩游戏&quot;+i);</span><br><span class="line">			if( i == 10)&#123;</span><br><span class="line">				MusicThread t = new MusicThread();  //创建线程子类的实例</span><br><span class="line">				t.start(); //底层也调用了run();  启动线程</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">			</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="方式二：实现Runnable接口"><a href="#方式二：实现Runnable接口" class="headerlink" title="方式二：实现Runnable接口"></a>方式二：实现Runnable接口</h3><p>1．自定义类实现Runnable接口；</p>
-<p>2．覆写run方法，线程运行的代码存放在run中；</p>
-<p>3．通过Thread类创建线程对象，并将实现了Runnable接口的实现类对象作为参数传递给Thread类的构造器。</p>
-<p>4．Thread类对象调用start方法，启动线程。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class MusicRunnable implements java.lang.Runnable&#123;         //注意MusicRunnable类不是线程类或者线程子类</span><br><span class="line">	public void run() &#123;									   //接口的实现必须覆盖方法。				</span><br><span class="line">		for(int i = 0 ;i &lt; 50;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			System.out.println(&quot;听音乐&quot;+i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">public class ImplementsRunnableDemo &#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		for(int i = 0 ;i &lt; 50;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			System.out.println(&quot;玩游戏&quot;+i);</span><br><span class="line">			if( i == 10)&#123;</span><br><span class="line">				Runnable t = new MusicRunnable();        //启动线程必须用线程类对象调用start();</span><br><span class="line">				new Thread(t).start();             //类Thread的一个构造器中Thread(Runnable target)分配新的 Thread 对象。</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="对比两种方法（吃苹果比赛）"><a href="#对比两种方法（吃苹果比赛）" class="headerlink" title="对比两种方法（吃苹果比赛）"></a>对比两种方法（吃苹果比赛）</h3><p><strong>1、继承Thread类</strong> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 	案例:存在50个苹果,现在有请三个童鞋(小A,小B,小C)上台表演吃苹果.</span><br><span class="line"> * 		因为A,B,C三个人可以同时吃苹果,此时得使用多线程技术来实现这个案例.</span><br><span class="line"> *</span><br><span class="line"> *       此处程序不合理,ABC每个线程都执行50次,即ABC每个人都吃一次编号50的苹果</span><br><span class="line"> */</span><br><span class="line">class Person extends Thread&#123;</span><br><span class="line">	private  int num= 50;</span><br><span class="line">	Person(String name)&#123;</span><br><span class="line">		super(name);</span><br><span class="line">	&#125;</span><br><span class="line">	public void run() &#123;</span><br><span class="line">		for(int i = 0;i &lt; 50;i++)&#123;</span><br><span class="line">		if(num &gt; 0)	</span><br><span class="line">		System.out.println(super.getName()+&quot;吃了第&quot;+num--+&quot;个苹果&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;	</span><br><span class="line">&#125;</span><br><span class="line">//使用继承Thread的方式创建线程</span><br><span class="line">public class ExtendsDemo &#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		Person p1 = new Person(&quot;A&quot;);</span><br><span class="line">		p1.start();</span><br><span class="line">		Person p2 = new Person(&quot;B&quot;);</span><br><span class="line">		p2.start();</span><br><span class="line">		Person p3 = new Person(&quot;C&quot;);</span><br><span class="line">		p3.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>2、实现Runnable接口</strong> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Apple implements Runnable&#123;</span><br><span class="line">	private int num = 50;</span><br><span class="line">	public void run()&#123;</span><br><span class="line">		for(int i = 0; i&lt; 50 ;i++)&#123;</span><br><span class="line">			if(num &gt; 0)&#123;</span><br><span class="line">				System.out.println(Thread.currentThread().getName()+&quot;吃了第&quot;+num--+&quot;个苹果&quot;);</span><br><span class="line">			&#125;//Thread.currentThread()   返回对当前正在执行的线程对象的引用。</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//使用实现Runnable接口的方式，这种方法可以解决此问题</span><br><span class="line">public class ImplementsDemo &#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		Runnable r = new Apple();</span><br><span class="line">		new Thread(r,&quot;A&quot;).start();</span><br><span class="line">		new Thread(r,&quot;B&quot;).start();</span><br><span class="line">		new Thread(r,&quot;C&quot;).start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>对比</strong></p>
-<p>继承方式：</p>
-<ul>
-<li>java中类是单继承的，如果继承了Thread，该类就不能再有其他的直接父类</li>
-<li>从操作上分析，继承方式更简单，获取线程的名字也简单（操作上，简单）</li>
-<li>从多线程共享一个资源上分析，<strong>继承方式不能做到</strong></li>
-</ul>
-<p>实现方式</p>
-<ul>
-<li>java中类可以实现接口，此时该类还可以继承其他类，并且可以实现接口（设计上，更优雅）</li>
-<li>从操作上分析，实现方式稍微复杂点，获取线程的名字比较复杂，得使用currentThread()获取当前线程的引用。</li>
-<li>从多线程共享一个资源上分析，<strong>实现方式可以做到</strong>。</li>
-</ul>
-
+        <h2 id="1-打印100-200之间的素数"><a href="#1-打印100-200之间的素数" class="headerlink" title="1.打印100~200之间的素数"></a>1.打印100~200之间的素数</h2><blockquote>
+<p> 素数：当一个数的因子只有1和它本身的时候就是素数。特殊也是最小的质数是2。</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>分析 ：一般的，拿一个数n(n!=2)除以2，除以3，直达除到n-1，若可以整除，说明n为质数,反之非质数</p>
+<p>当然，也不是一点得除到n-1，其实到n/2都可以了。</p>
+<p>甚至，其实到根号n都可以了。</p>
+<p>还有，除了2偶数都不可能是质数，那直接把偶数排除掉 for(i = 3;i&lt;n/2;i+=2)</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//求100-200之间的素数；</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">100</span>; i &lt;= <span class="number">200</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (IsPrime(i))&#123;</span><br><span class="line">			count++;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">" %d "</span>, i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, count);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">IsPrime</span><span class="params">(<span class="keyword">int</span> n)</span>  <span class="comment">//判断一个数是否为素数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (n &lt;= <span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">2</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++)&#123;</span><br><span class="line">		<span class="keyword">if</span> (n%i == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> <a href="https://blog.csdn.net/PriestessofBirth/article/details/79435124" target="_blank" rel="noopener">作为参考</a>,等到后面研究算法的时候可能有更加优化的方案！</p>
+</blockquote>
+<h2 id="2-输出乘法口诀表"><a href="#2-输出乘法口诀表" class="headerlink" title="2.输出乘法口诀表"></a>2.输出乘法口诀表</h2><blockquote>
+<p> 用一对嵌套for循环可以轻易实现，注意格式化打印</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="comment">//打印乘法口诀表</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">10</span>; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span> ; j&lt;= i ; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d*%d=%d\t"</span>,j,i,i*j);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果：<img src="/2018/09/21/C_计算素数/乘法口诀表.png" title="乘法口诀表"></p>
+<h2 id="3-判断1000-2000年之间的闰年"><a href="#3-判断1000-2000年之间的闰年" class="headerlink" title="3.判断1000~2000年之间的闰年"></a>3.判断1000~2000年之间的闰年</h2><blockquote>
+<p> 闰年判断条件：四年一闰，一百年不闰。四百年又一闰。</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="comment">//判断1000年---2000年之间的闰年</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1000</span>; i &lt;= <span class="number">2000</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (IsLeapYear(i))&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d "</span>, i);</span><br><span class="line">			count++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"闰年有%d个\n"</span>,count);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">IsLeapYear</span><span class="params">(<span class="keyword">int</span> year)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> ((year % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; year % <span class="number">100</span> != <span class="number">0</span>) || (year % <span class="number">400</span> == <span class="number">0</span>))</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2018/09/21/C_计算素数/判断闰年.png" title="判断闰年">
       
     </div>
     
@@ -356,13 +349,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2018/09/17/线程和并发--基础操作/">线程和并发--基础操作</a></p>
+        <p><span>本文标题:</span><a  href="/2018/09/21/C_计算素数/">素数计算</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Willing 的个人博客">Willing</a></p>
-        <p><span>发布时间:</span>2018年09月17日 - 23时56分</p>
-        <p><span>最后更新:</span>2018年08月09日 - 16时29分</p>
+        <p><span>发布时间:</span>2018年09月21日 - 15时44分</p>
+        <p><span>最后更新:</span>2018年09月21日 - 21时41分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/09/17/线程和并发--基础操作/" title="线程和并发--基础操作">http://yoursite.com/2018/09/17/线程和并发--基础操作/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/09/17/线程和并发--基础操作/　　作者: Willing" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/09/21/C_计算素数/" title="素数计算">http://yoursite.com/2018/09/21/C_计算素数/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/09/21/C_计算素数/　　作者: Willing" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -373,15 +366,11 @@
 
 <nav id="article-nav">
   
-    <a  href="/2018/09/17/hexo搭建博客/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Hexo+GitHub打造个人博客
-        
-      </div>
-    </a>
   
+    <a  href="/2018/09/21/先定一个小目标~/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">先定一个小目标~</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -391,7 +380,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用java语言创建进程"><span class="toc-number">2.</span> <span class="toc-text">用java语言创建进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建和启动线程"><span class="toc-number">3.</span> <span class="toc-text">创建和启动线程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方式一：继承Thread类"><span class="toc-number">3.1.</span> <span class="toc-text">方式一：继承Thread类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方式二：实现Runnable接口"><span class="toc-number">3.2.</span> <span class="toc-text">方式二：实现Runnable接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对比两种方法（吃苹果比赛）"><span class="toc-number">3.3.</span> <span class="toc-text">对比两种方法（吃苹果比赛）</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-打印100-200之间的素数"><span class="toc-number">1.</span> <span class="toc-text">1.打印100~200之间的素数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-输出乘法口诀表"><span class="toc-number">2.</span> <span class="toc-text">2.输出乘法口诀表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-判断1000-2000年之间的闰年"><span class="toc-number">3.</span> <span class="toc-text">3.判断1000~2000年之间的闰年</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -464,13 +453,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2018/09/17/hexo搭建博客/" title="上一篇: Hexo+GitHub打造个人博客">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a  href="/2018/09/21/先定一个小目标~/" title="下一篇: 先定一个小目标~">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
     <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/09/21/C_计算素数/">素数计算</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/21/先定一个小目标~/">先定一个小目标~</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/17/hexo搭建博客/">Hexo+GitHub打造个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/17/线程和并发--基础操作/">线程和并发--基础操作</a></li></ul>
