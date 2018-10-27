@@ -194,7 +194,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/C语言/" style="font-size: 10px;">C语言</a> <a href="/tags/C语言练习/" style="font-size: 20px;">C语言练习</a> <a href="/tags/Flags/" style="font-size: 10px;">Flags</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
+                        <a href="/tags/C语言/" style="font-size: 10px;">C语言</a> <a href="/tags/C语言练习/" style="font-size: 20px;">C语言练习</a> <a href="/tags/Flags/" style="font-size: 10px;">Flags</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
                     </div>
                 </section>
                 
@@ -285,90 +285,45 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/10/27/生产者消费者模型/">生产者和消费者模型</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="生产者和消费者模型"><a href="#生产者和消费者模型" class="headerlink" title="生产者和消费者模型"></a>生产者和消费者模型</h2><blockquote>
+              <h2 id="生产者和消费者模型"><a href="#生产者和消费者模型" class="headerlink" title="生产者和消费者模型"></a>生产者和消费者模型</h2><blockquote>
 <p>线程通信：不同的线程执行不同的任务,如果这些任务有某种关系，各个线程必须要能够通信，从而完成工作。线程通信中的经典问题：<strong>生产者和消费者问题</strong></p>
 </blockquote>
-<h3 id="模型："><a href="#模型：" class="headerlink" title="模型："></a>模型：</h3><p><img src="https://img2018.cnblogs.com/blog/1296856/201810/1296856-20181027180439160-451000565.png" alt=""></p>
-<p>这个模型也体现了面向对象的设计理念：<strong>低耦合</strong></p>
-<p>也就是为什么生产者生产的东西为什么不直接给消费者，还有经过一个缓冲区（共享资源区）</p>
-<p>这就相当于去包子店吃包子，你要5个包子，老板把5个人包子放在一个盘子中再给你，这个盘子就是一个缓冲区。</p>
-<p><strong>现在模拟一个生产者和消费者模型</strong></p>
-<ul>
-<li><p>生产者生产“李小龙 男”，消费者消费也就是打印出“李小龙 男”</p>
-</li>
-<li><p>生产者生产“狗晗 女”，消费者消费也就是打印出“狗晗 女”</p>
-</li>
-<li><p>要求生产者生产一个，消费者消费一个。也就是缓冲区为1</p>
-</li>
-<li><p>期望结果：</p>
-<blockquote>
-<p>李小龙   男</p>
-<p>狗晗 女</p>
-<p>李小龙   男</p>
-<p>狗晗 女</p>
-<p>···</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h3><p>需要创建4个类，分别是生产者，消费者，共享资源类，测试类</p>
-<ul>
-<li><p>生产者类实现Runnable接口，覆盖run方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Producer</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">	ShareResource resource = <span class="keyword">null</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Producer</span><span class="params">(ShareResource resource)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.resource = resource;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">50</span>;i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(i % <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">				resource.product(<span class="string">"李小龙"</span>, <span class="string">"男"</span>);</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				resource.product(<span class="string">"狗晗"</span>,<span class="string">"女"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>消费者类实现Runnable接口，覆盖run方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Consumer</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">	ShareResource resource = <span class="keyword">null</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Consumer</span><span class="params">(ShareResource resource)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.resource = resource;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">50</span>;i++)&#123;</span><br><span class="line">			resource.consume();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>共享资源类有生产者和消费者两个类的引用</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShareResource</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> String sex;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">product</span><span class="params">(String name,String sex)</span></span>&#123;</span><br><span class="line">	    <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            Thread.sleep(<span class="number">10</span>);</span><br><span class="line">        &#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">		<span class="keyword">this</span>.sex = sex;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">consume</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            Thread.sleep(<span class="number">10</span>);</span><br><span class="line">        &#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">		System.out.println(<span class="keyword">this</span>.name + <span class="string">" "</span> + <span class="keyword">this</span>.sex);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>测试类可以启动线程</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[]args)</span></span>&#123;</span><br><span class="line">		ShareResource resource = <span class="keyword">new</span> ShareResource();</span><br><span class="line">		<span class="keyword">new</span> Thread(<span class="keyword">new</span> Producer(resource)).start();</span><br><span class="line">		<span class="keyword">new</span> Thread(<span class="keyword">new</span> Consumer(resource)).start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>运行后发现，结果性别发生了紊乱:<br><img src="https://img2018.cnblogs.com/blog/1296856/201810/1296856-20181027180548349-1940198542.png" alt=""></p>
-<p>我靠，这我龙哥愿意吗，怎么回事？</p>
-<p>就是因为多线程并发同一资源，要把它们的方法用synchronized修饰保证它们生产和消费不同时进行，当你加上synchronized之后:</p>
-<p><img src="https://img2018.cnblogs.com/blog/1296856/201810/1296856-20181027180600339-861860966.png" alt=""></p>
-<p>确实性别紊乱的问题是解决了，狗晗是高兴了，但是它们并不是交替出现的啊，怎么回事？</p>
-<p>你要交替出现，必须一个等着一个啊，你生产完了，你得停下来休息啊，让消费者先消费，等到消费者消费完之后，让消费者把你叫醒再继续生产，消费者就又去休息去了，这个消费者优点类似于吃了睡，睡了在吃一样。</p>
-<h4 id="wait和notify方法"><a href="#wait和notify方法" class="headerlink" title="wait和notify方法"></a>wait和notify方法</h4><ul>
-<li><p>wait方法：执行该方法的对象释放同步锁，JVM把该线程存放到<strong>等待池</strong>中，等待其他线程唤醒</p>
-</li>
-<li><p>notify方法：唤醒在等待池中的等待的任意一个线程，把线程转移到<strong>锁池</strong>中</p>
-</li>
-<li><p>notifyAll方法：唤醒在等待池中等待的所有线程，把线程转移到<strong>锁池</strong>中</p>
-<blockquote>
-<p>等待池：没有机会获取同步锁，只能等待被唤醒，被转移到锁池中。</p>
-<p>锁池： 当前生产者在生产数据的时候(先拥有同步锁),其他线程就在锁池中等待获取锁.，当线程执行完同步代码块的时候,就会释放同步锁,其他线程开始抢锁的使用权.</p>
-</blockquote>
-</li>
-</ul>
-<p>又来看这个模型，应该得定义一个判断当前共享资源区是否为空，如果为空，消费者就应该等待生产者生产，当生产者生产 完毕后应该唤醒消费者进行消费。如果不为空，生产者就应该等待消费者，等消费者完毕后再唤醒生产者继续生产</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShareResource</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> String sex;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">boolean</span> isEmpty = <span class="keyword">true</span>;<span class="comment">//判断共享区空和满的一个标志</span></span><br><span class="line">	<span class="comment">//生产者生产</span></span><br><span class="line">	<span class="function"><span class="keyword">synchronized</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">product</span><span class="params">(String name,String sex)</span></span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">while</span>(!isEmpty)&#123;<span class="comment">//共享区不空，生产者需要停下等待消费者消费</span></span><br><span class="line">				<span class="comment">/**</span></span><br><span class="line"><span class="comment">				 * this是同步锁(同步监听对象)，wait方法是Object类中 的方法，调用该方法就释放同步锁</span></span><br><span class="line"><span class="comment">				 * 然后JVM把该线程存放到等待池中，等待其他线程唤醒该线程</span></span><br><span class="line"><span class="comment">				 * 该方法只能被同步监听对象调用，否则报错IllegalMonitorStateException.</span></span><br><span class="line"><span class="comment">				 */</span></span><br><span class="line">				</span><br><span class="line">				<span class="keyword">this</span>.wait();</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//----------开始生产-----------</span></span><br><span class="line">			<span class="keyword">this</span>.name = name;</span><br><span class="line">			Thread.sleep(<span class="number">10</span>);</span><br><span class="line">			<span class="keyword">this</span>.sex = sex;</span><br><span class="line">			<span class="comment">//---------结束生产------------</span></span><br><span class="line">			isEmpty = <span class="keyword">false</span>;  <span class="comment">//设置共享区为不空</span></span><br><span class="line">			<span class="comment">/**</span></span><br><span class="line"><span class="comment">			 * notify方法是唤醒等待池中的随机一个线程，把线程转移到锁池中等待(锁池中有机会获取到锁)</span></span><br><span class="line"><span class="comment">			 * notifyAll方法是唤醒等待池中的所有线程，把线程转移到锁池中等待</span></span><br><span class="line"><span class="comment">			 * 该方法只能被同步监听对象锁调用，否则报错</span></span><br><span class="line"><span class="comment">			 */</span></span><br><span class="line">			<span class="keyword">this</span>.notify();	<span class="comment">//唤醒一个消费者               notify是唤醒其中一个，notifyAll是唤醒全部</span></span><br><span class="line">		&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//消费者消费</span></span><br><span class="line">	<span class="function"><span class="keyword">synchronized</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">consume</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">while</span>(isEmpty)&#123;<span class="comment">//当共享区为空时，消费者进行等待</span></span><br><span class="line">				<span class="keyword">this</span>.wait();</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//------------开始消费-------------</span></span><br><span class="line">			Thread.sleep(<span class="number">30</span>);</span><br><span class="line">			System.out.println(name + <span class="string">" "</span> + sex);</span><br><span class="line">			<span class="comment">//------------结束消费-------------</span></span><br><span class="line">			isEmpty = <span class="keyword">true</span>;</span><br><span class="line">			<span class="keyword">this</span>.notify();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>用synchronized修饰方法，会自动获取锁，自动释放锁。从java5开始使用<strong>Lock机制</strong>取代synchronized代码块和synchronized方法，使用Condition接口对象的await，signal，signalAll方法取代notify，notifyAll，用法还是大同小异</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShareResource</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> String sex;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">boolean</span> isEmpty = <span class="keyword">true</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">final</span> Lock lock = <span class="keyword">new</span> ReentrantLock();</span><br><span class="line">	<span class="keyword">private</span> Condition condition = lock.newCondition();</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">product</span><span class="params">(String name,String sex)</span></span>&#123;</span><br><span class="line">		lock.lock();<span class="comment">//获取锁</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">while</span>(!isEmpty)&#123;<span class="comment">//不空，生产者要等待消费者消费</span></span><br><span class="line">				condition.await();<span class="comment">//等待，相当于this.wait();</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">this</span>.name = name;</span><br><span class="line">			Thread.sleep(<span class="number">10</span>);</span><br><span class="line">			<span class="keyword">this</span>.sex = sex;</span><br><span class="line">			</span><br><span class="line">			isEmpty = <span class="keyword">false</span>;<span class="comment">//把共享区置为不空</span></span><br><span class="line">			condition.signal();<span class="comment">//唤醒一个线程，相当于this.notify().  signalAll 可以唤醒全部线程</span></span><br><span class="line">		&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">			lock.unlock();<span class="comment">//释放锁</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">consume</span><span class="params">()</span></span>&#123;</span><br><span class="line">		lock.lock();</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">while</span>(isEmpty)&#123;<span class="comment">//共享区为空，需要等待生产者生产</span></span><br><span class="line">				condition.await();</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			Thread.sleep(<span class="number">20</span>);</span><br><span class="line">			System.out.println(<span class="keyword">this</span>.name + <span class="string">" "</span> + <span class="keyword">this</span>.sex);</span><br><span class="line">			</span><br><span class="line">			isEmpty = <span class="keyword">false</span>;</span><br><span class="line">			condition.signal();</span><br><span class="line">			</span><br><span class="line">		&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">			lock.unlock();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果就是：</p>
-<p><img src="https://img2018.cnblogs.com/blog/1296856/201810/1296856-20181027180619478-1215835162.png" alt=""></p>
-<p><strong>Lock机制</strong></p>
-<p>创建一个Lock接口实现类ReetranLock的对象,进入同步方法后立即加锁，lock.lock();最后释放锁，看API中的典型代码<br><img src="https://img2018.cnblogs.com/blog/1296856/201810/1296856-20181027180629472-1566879594.png" alt=""></p>
-
+          
       
     </div>
     
     <div class="article-info article-info-index">
       
       
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/lang/">lang</a>
+    </div>
+
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多线程/">多线程</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2018/10/27/生产者消费者模型/#more">查看更多 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>

@@ -7,24 +7,25 @@
   
   
   
-  <title>Willing&#39;Blog</title>
+  <title>生产者和消费者模型 | Willing&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="生产者和消费者模型 线程通信：不同的线程执行不同的任务,如果这些任务有某种关系，各个线程必须要能够通信，从而完成工作。线程通信中的经典问题：生产者和消费者问题  模型： 这个模型也体现了面向对象的设计理念：低耦合 也就是为什么生产者生产的东西为什么不直接给消费者，还有经过一个缓冲区（共享资源区） 这就相当于去包子店吃包子，你要5个包子，老板把5个人包子放在一个盘子中再给你，这个盘子就是一个缓冲区。">
+  <meta name="description" content="生产者和消费者模型 线程通信：不同的线程执行不同的任务,如果这些任务有某种关系，各个线程必须要能够通信，从而完成工作。线程通信中的经典问题：生产者和消费者问题">
+<meta name="keywords" content="多线程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Willing&#39;Blog">
+<meta property="og:title" content="生产者和消费者模型">
 <meta property="og:url" content="http://yoursite.com/2018/10/27/生产者消费者模型/index.html">
 <meta property="og:site_name" content="Willing&#39;Blog">
-<meta property="og:description" content="生产者和消费者模型 线程通信：不同的线程执行不同的任务,如果这些任务有某种关系，各个线程必须要能够通信，从而完成工作。线程通信中的经典问题：生产者和消费者问题  模型： 这个模型也体现了面向对象的设计理念：低耦合 也就是为什么生产者生产的东西为什么不直接给消费者，还有经过一个缓冲区（共享资源区） 这就相当于去包子店吃包子，你要5个包子，老板把5个人包子放在一个盘子中再给你，这个盘子就是一个缓冲区。">
+<meta property="og:description" content="生产者和消费者模型 线程通信：不同的线程执行不同的任务,如果这些任务有某种关系，各个线程必须要能够通信，从而完成工作。线程通信中的经典问题：生产者和消费者问题">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img2018.cnblogs.com/blog/1296856/201810/1296856-20181027180439160-451000565.png">
 <meta property="og:image" content="https://img2018.cnblogs.com/blog/1296856/201810/1296856-20181027180548349-1940198542.png">
 <meta property="og:image" content="https://img2018.cnblogs.com/blog/1296856/201810/1296856-20181027180600339-861860966.png">
 <meta property="og:image" content="https://img2018.cnblogs.com/blog/1296856/201810/1296856-20181027180619478-1215835162.png">
 <meta property="og:image" content="https://img2018.cnblogs.com/blog/1296856/201810/1296856-20181027180629472-1566879594.png">
-<meta property="og:updated_time" content="2018-10-27T10:09:20.156Z">
+<meta property="og:updated_time" content="2018-10-27T10:14:30.837Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Willing&#39;Blog">
-<meta name="twitter:description" content="生产者和消费者模型 线程通信：不同的线程执行不同的任务,如果这些任务有某种关系，各个线程必须要能够通信，从而完成工作。线程通信中的经典问题：生产者和消费者问题  模型： 这个模型也体现了面向对象的设计理念：低耦合 也就是为什么生产者生产的东西为什么不直接给消费者，还有经过一个缓冲区（共享资源区） 这就相当于去包子店吃包子，你要5个包子，老板把5个人包子放在一个盘子中再给你，这个盘子就是一个缓冲区。">
+<meta name="twitter:title" content="生产者和消费者模型">
+<meta name="twitter:description" content="生产者和消费者模型 线程通信：不同的线程执行不同的任务,如果这些任务有某种关系，各个线程必须要能够通信，从而完成工作。线程通信中的经典问题：生产者和消费者问题">
 <meta name="twitter:image" content="https://img2018.cnblogs.com/blog/1296856/201810/1296856-20181027180439160-451000565.png">
   
     <link rel="alternative" href="/atom.xml" title="Willing&#39;Blog" type="application/atom+xml">
@@ -201,7 +202,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/C语言/" style="font-size: 10px;">C语言</a> <a href="/tags/C语言练习/" style="font-size: 20px;">C语言练习</a> <a href="/tags/Flags/" style="font-size: 10px;">Flags</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
+                        <a href="/tags/C语言/" style="font-size: 10px;">C语言</a> <a href="/tags/C语言练习/" style="font-size: 20px;">C语言练习</a> <a href="/tags/Flags/" style="font-size: 10px;">Flags</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
                     </div>
                 </section>
                 
@@ -290,12 +291,40 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      生产者和消费者模型
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/lang/">lang</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多线程/">多线程</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
         <h2 id="生产者和消费者模型"><a href="#生产者和消费者模型" class="headerlink" title="生产者和消费者模型"></a>生产者和消费者模型</h2><blockquote>
 <p>线程通信：不同的线程执行不同的任务,如果这些任务有某种关系，各个线程必须要能够通信，从而完成工作。线程通信中的经典问题：<strong>生产者和消费者问题</strong></p>
 </blockquote>
+<a id="more"></a>
 <h3 id="模型："><a href="#模型：" class="headerlink" title="模型："></a>模型：</h3><p><img src="https://img2018.cnblogs.com/blog/1296856/201810/1296856-20181027180439160-451000565.png" alt=""></p>
 <p>这个模型也体现了面向对象的设计理念：<strong>低耦合</strong></p>
 <p>也就是为什么生产者生产的东西为什么不直接给消费者，还有经过一个缓冲区（共享资源区）</p>
@@ -373,10 +402,10 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2018/10/27/生产者消费者模型/"></a></p>
+        <p><span>本文标题:</span><a  href="/2018/10/27/生产者消费者模型/">生产者和消费者模型</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Willing 的个人博客">Willing</a></p>
         <p><span>发布时间:</span>2018年10月27日 - 18时10分</p>
-        <p><span>最后更新:</span>2018年10月27日 - 18时09分</p>
+        <p><span>最后更新:</span>2018年10月27日 - 18时14分</p>
         <p>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/10/27/生产者消费者模型/　　作者: Willing" title=""></span>
         </p>
@@ -485,7 +514,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/27/生产者消费者模型/">生产者消费者模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/20/java集合框架/">浅谈排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/16/ArrayList模拟球员上场案列/">ArrayList模拟球员上场案列</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/08/浅谈排序/">浅谈排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/29/C_分支和循环结构/">条件和循环语句</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/26/C语言练习1/">C--Test01</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/21/C_计算素数/">素数计算</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/21/先定一个小目标~/">先定一个小目标~</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/17/hexo搭建博客/">Hexo+GitHub打造个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/17/线程和并发--基础操作/">线程和并发--基础操作</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/27/生产者消费者模型/">生产者和消费者模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/20/java集合框架/">浅谈排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/16/ArrayList模拟球员上场案列/">ArrayList模拟球员上场案列</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/08/浅谈排序/">浅谈排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/29/C_分支和循环结构/">条件和循环语句</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/26/C语言练习1/">C--Test01</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/21/C_计算素数/">素数计算</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/21/先定一个小目标~/">先定一个小目标~</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/17/hexo搭建博客/">Hexo+GitHub打造个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/17/线程和并发--基础操作/">线程和并发--基础操作</a></li></ul>
     
 <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
