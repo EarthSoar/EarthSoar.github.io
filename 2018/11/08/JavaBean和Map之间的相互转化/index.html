@@ -7,20 +7,20 @@
   
   
   
-  <title>先定一个小目标~ | Willing&#39;Blog</title>
+  <title>JavaBean和Map的相互转换 | Willing&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="先做一个自我介绍，我叫史腾飞，好就这样！大三了，大学时间已经过半了，不是感叹时间过得太快了，但是我也不能掉队呀！  学习编程，代码量尤为重要。所以我可以保证我每天三个小时以上的coding时间。 学习，就要做好笔记，以便于回顾。这也是写博客的主要目的。 杜绝眼高手低。 我会定期制定我的学习计划。   做你不想做的事，你会发现也不过如此！ 加油！">
-<meta name="keywords" content="Flags">
+  <meta name="description" content="JavaBean和Map的相互转换一、JavaBean1.什么是JavaBean？JavaBean其实就是一种遵循特定写法的类，必须遵循一定的规范：  类必须由public修饰，并且保证有公共的无参数的构造器 包含操作属性的的public方法，getter setter方法 字段是私有的">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="先定一个小目标~">
-<meta property="og:url" content="http://yoursite.com/2018/09/21/先定一个小目标~/index.html">
+<meta property="og:title" content="JavaBean和Map的相互转换">
+<meta property="og:url" content="http://yoursite.com/2018/11/08/JavaBean和Map之间的相互转化/index.html">
 <meta property="og:site_name" content="Willing&#39;Blog">
-<meta property="og:description" content="先做一个自我介绍，我叫史腾飞，好就这样！大三了，大学时间已经过半了，不是感叹时间过得太快了，但是我也不能掉队呀！  学习编程，代码量尤为重要。所以我可以保证我每天三个小时以上的coding时间。 学习，就要做好笔记，以便于回顾。这也是写博客的主要目的。 杜绝眼高手低。 我会定期制定我的学习计划。   做你不想做的事，你会发现也不过如此！ 加油！">
+<meta property="og:description" content="JavaBean和Map的相互转换一、JavaBean1.什么是JavaBean？JavaBean其实就是一种遵循特定写法的类，必须遵循一定的规范：  类必须由public修饰，并且保证有公共的无参数的构造器 包含操作属性的的public方法，getter setter方法 字段是私有的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-21T11:45:27.808Z">
+<meta property="og:updated_time" content="2018-11-08T14:11:17.074Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="先定一个小目标~">
-<meta name="twitter:description" content="先做一个自我介绍，我叫史腾飞，好就这样！大三了，大学时间已经过半了，不是感叹时间过得太快了，但是我也不能掉队呀！  学习编程，代码量尤为重要。所以我可以保证我每天三个小时以上的coding时间。 学习，就要做好笔记，以便于回顾。这也是写博客的主要目的。 杜绝眼高手低。 我会定期制定我的学习计划。   做你不想做的事，你会发现也不过如此！ 加油！">
+<meta name="twitter:title" content="JavaBean和Map的相互转换">
+<meta name="twitter:description" content="JavaBean和Map的相互转换一、JavaBean1.什么是JavaBean？JavaBean其实就是一种遵循特定写法的类，必须遵循一定的规范：  类必须由public修饰，并且保证有公共的无参数的构造器 包含操作属性的的public方法，getter setter方法 字段是私有的">
   
     <link rel="alternative" href="/atom.xml" title="Willing&#39;Blog" type="application/atom+xml">
   
@@ -271,11 +271,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-先定一个小目标~" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-JavaBean和Map之间的相互转化" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2018/09/21/先定一个小目标~/" class="article-date">
-      <time datetime="2018-09-21T07:32:20.320Z" itemprop="datePublished">2018-09-21</time>
+      <a  href="/2018/11/08/JavaBean和Map之间的相互转化/" class="article-date">
+      <time datetime="2018-11-08T14:10:19.236Z" itemprop="datePublished">2018-11-08</time>
 </a>
 
     </div>
@@ -289,7 +289,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      先定一个小目标~
+      JavaBean和Map的相互转换
     </h1>
   
 
@@ -299,13 +299,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/others/">others</a>
+    <a class="article-category-link" href="/categories/lang/">lang</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flags/">Flags</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -315,17 +315,33 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>先做一个自我介绍，我叫史腾飞，好就这样！<br>大三了，大学时间已经过半了，不是感叹时间过得太快了，但是我也不能掉队呀！</p>
+        <h2 id="JavaBean和Map的相互转换"><a href="#JavaBean和Map的相互转换" class="headerlink" title="JavaBean和Map的相互转换"></a>JavaBean和Map的相互转换</h2><h3 id="一、JavaBean"><a href="#一、JavaBean" class="headerlink" title="一、JavaBean"></a>一、JavaBean</h3><h4 id="1-什么是JavaBean？"><a href="#1-什么是JavaBean？" class="headerlink" title="1.什么是JavaBean？"></a>1.什么是JavaBean？</h4><p>JavaBean其实就是一种遵循特定写法的类，必须遵循一定的规范：</p>
 <ul>
-<li>学习编程，代码量尤为重要。所以我可以保证我每天三个小时以上的coding时间。</li>
-<li>学习，就要做好笔记，以便于回顾。这也是写博客的主要目的。</li>
-<li>杜绝眼高手低。</li>
-<li>我会定期制定我的学习计划。</li>
+<li>类必须由public修饰，并且保证有公共的无参数的构造器</li>
+<li>包含操作属性的的public方法，getter setter方法</li>
+<li>字段是私有的</li>
 </ul>
-<blockquote>
-<p>做你不想做的事，你会发现也不过如此！</p>
-<p>加油！</p>
-</blockquote>
+<a id="more"></a>
+<p>一个JavaBean是由3部分组成，分别是属性、方法、和事件。注意这里的属性是property，表示的是状态，并不是字段(Field）我们在刚开始学面向对象的时候其实有的时候也是用到了这个规范，我们写的getter和setter方法，比如public  void setName(String name){  this.name = name;}属性其实就是name，在比如public int getAge(){return 19;},属性其实就是age。一般的，我们写getter个setter方法用的是IDE自己生成的，属性和字段同名。一定要区分属性和字段，它们并不是一个东西，也存在属性名和字段名不同。</p>
+<h4 id="2-内省机制"><a href="#2-内省机制" class="headerlink" title="2.内省机制"></a>2.内省机制</h4><p>内省机制的作用就是用来查看和操作JavaBean的属性。</p>
+<ul>
+<li>获取JavaBean的属性名</li>
+<li>通过getter方法给属性获取值，通过setter给属性设置值</li>
+</ul>
+<p>常用的API</p>
+<p><strong>Introspector类中</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> BeanInfo <span class="title">getBeanInfo</span><span class="params">(Class&lt;?&gt; beanClass)</span> </span></span><br><span class="line"><span class="function">在 Java Bean 上进行内省，了解其所有属性、公开的方法和事件。 </span></span><br><span class="line"><span class="function"><span class="keyword">static</span> BeanInfo <span class="title">getBeanInfo</span><span class="params">(Class&lt;?&gt; beanClass, Class&lt;?&gt; stopClass)</span> </span></span><br><span class="line"><span class="function">在给定的“断”点之下，在 Java Bean 上进行内省，了解其所有属性和公开的方法。</span></span><br></pre></td></tr></table></figure>
+<p>可以看到在Introspector类中有两个静态方法可以获得获取JavaBean的信息，一般的第一个会得到父类Object.class中的getClass方法，第二种会屏蔽掉Object类中的方法。返回一个BeanInfo，在BeanInfo接口中有一个方法可以获得bean的描述器对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MethodDescriptor[] getMethodDescriptors() 获得 beans MethodDescriptor。 </span><br><span class="line">PropertyDescriptor[] getPropertyDescriptors()  获得 beans PropertyDescriptor。</span><br></pre></td></tr></table></figure>
+<p>分别返回的是各自的描述器对象    </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Method <span class="title">getReadMethod</span><span class="params">()</span>  获得应该用于读取属性值的方法。 就是getter方法</span></span><br><span class="line"><span class="function">Method <span class="title">getWriteMethod</span><span class="params">()</span>  获得应该用于写入属性值的方法。 就是setter方法</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">boolean</span> man;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line">	...省略剩余getter setter方法</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"User [name="</span> + name + <span class="string">", age="</span> + age + <span class="string">", man="</span> + man + <span class="string">"]"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//获得JavaBean的描述信息</span></span><br><span class="line">		BeanInfo info = Introspector.getBeanInfo(User.class,Object.class);</span><br><span class="line">        <span class="comment">//获取JavaBean的属性描述器对象，返回的是一个描述器数组</span></span><br><span class="line">		PropertyDescriptor[] pds = info.getPropertyDescriptors();</span><br><span class="line">        <span class="comment">//利用反射创建这个类的对象，当然这只是测试一下</span></span><br><span class="line">		User u = User.class.newInstance();</span><br><span class="line">       	<span class="comment">//对描述器对象进行迭代</span></span><br><span class="line">		<span class="keyword">for</span> (PropertyDescriptor pd : pds) &#123;</span><br><span class="line">			<span class="comment">//获取属性名称 和属性的类型</span></span><br><span class="line">			System.out.println(pd.getName()+<span class="string">","</span>+pd.getPropertyType()());</span><br><span class="line">             <span class="comment">//获取getset方法</span></span><br><span class="line">			Method get = pd.getReadMethod();</span><br><span class="line">			Method set = pd.getWriteMethod();</span><br><span class="line">			System.out.println(<span class="string">"getter方法："</span>+get);</span><br><span class="line">			System.out.println(<span class="string">"setter方法："</span>+set);</span><br><span class="line">			</span><br><span class="line">			<span class="comment">//用反射给name属性设置值</span></span><br><span class="line">			<span class="keyword">if</span>(<span class="string">"name"</span>.equals(pd.getName()))&#123;</span><br><span class="line">				Method setter = pd.getWriteMethod();</span><br><span class="line">				setter.invoke(u, <span class="string">"xx"</span>);</span><br><span class="line">				Method getter = pd.getReadMethod();</span><br><span class="line">				Object o = getter.invoke(u);<span class="comment">//获取名字</span></span><br><span class="line">				System.out.println(o);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(u);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="二、JavaBean和Map的相互转化"><a href="#二、JavaBean和Map的相互转化" class="headerlink" title="二、JavaBean和Map的相互转化"></a>二、JavaBean和Map的相互转化</h3><p>我们可以发现javabean和map之间有很多相似之处.在map中是一对键值对key-value，而在JavaBean中是属性名-属性值。现在对这两种进行相互转换</p>
+<h4 id="1-JavaBean转化为Map"><a href="#1-JavaBean转化为Map" class="headerlink" title="1.JavaBean转化为Map"></a>1.JavaBean转化为Map</h4><p><strong>思路：</strong>把bean转化为map，不过就是把bean中的属性名给map的key，把属性值给map中的value。在程序上表达，提供一个方法，传入的是一个JavaBean对象，返回的是一个Map。</p>
+<p>上代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//把JavaBean转化为map</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Map&lt;String,Object&gt; <span class="title">bean2map</span><span class="params">(Object bean)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">    Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="comment">//获取JavaBean的描述器</span></span><br><span class="line">    BeanInfo b = Introspector.getBeanInfo(bean.getClass(),Object.class);</span><br><span class="line">    <span class="comment">//获取属性描述器</span></span><br><span class="line">    PropertyDescriptor[] pds = b.getPropertyDescriptors();</span><br><span class="line">    <span class="comment">//对属性迭代</span></span><br><span class="line">    <span class="keyword">for</span> (PropertyDescriptor pd : pds) &#123;</span><br><span class="line">        <span class="comment">//属性名称</span></span><br><span class="line">        String propertyName = pd.getName();</span><br><span class="line">        <span class="comment">//属性值,用getter方法获取</span></span><br><span class="line">        Method m = pd.getReadMethod();</span><br><span class="line">        Object properValue = m.invoke(bean);<span class="comment">//用对象执行getter方法获得属性值</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//把属性名-属性值 存到Map中</span></span><br><span class="line">        map.put(propertyName, properValue);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> map;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-把Map转化为JavaBean"><a href="#2-把Map转化为JavaBean" class="headerlink" title="2.把Map转化为JavaBean"></a>2.把Map转化为JavaBean</h4><p><strong>思路：</strong>map转化为javabean,不就是把map的value设置给属性为属性值，也就在找到bean中和Map中key相同的属性名，把这个key对应的value设置给这个属性。在程序上表达就是，提供一个方法，传入map对象和一个bean的Class类型，返回一个JavaBean对象。注意，这里传入的参数多了一个，因为肯定得用反射创建bean对象把，如果只传入一个map对象，怎么创建对象？怎么知道吧map转化为什么类型的JavaBean。好了，直接撸代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//把Map转化为JavaBean</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">map2bean</span><span class="params">(Map&lt;String,Object&gt; map,Class&lt;T&gt; clz)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">    <span class="comment">//创建一个需要转换为的类型的对象</span></span><br><span class="line">    T obj = clz.newInstance();</span><br><span class="line">    <span class="comment">//从Map中获取和属性名称一样的值，把值设置给对象(setter方法)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//得到属性的描述器</span></span><br><span class="line">    BeanInfo b = Introspector.getBeanInfo(clz,Object.class);</span><br><span class="line">    PropertyDescriptor[] pds = b.getPropertyDescriptors();</span><br><span class="line">    <span class="keyword">for</span> (PropertyDescriptor pd : pds) &#123;</span><br><span class="line">        <span class="comment">//得到属性的setter方法</span></span><br><span class="line">        Method setter = pd.getWriteMethod();</span><br><span class="line">        <span class="comment">//得到key名字和属性名字相同的value设置给属性</span></span><br><span class="line">        setter.invoke(obj, map.get(pd.getName()));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -334,12 +350,12 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2018/09/21/先定一个小目标~/">先定一个小目标~</a></p>
+        <p><span>本文标题:</span><a  href="/2018/11/08/JavaBean和Map之间的相互转化/">JavaBean和Map的相互转换</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Willing 的个人博客">Willing</a></p>
-        <p><span>发布时间:</span>2018年09月21日 - 15时32分</p>
-        <p><span>最后更新:</span>2018年09月21日 - 19时45分</p>
+        <p><span>发布时间:</span>2018年11月08日 - 22时10分</p>
+        <p><span>最后更新:</span>2018年11月08日 - 22时11分</p>
         <p>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/09/21/先定一个小目标~/　　作者: Willing" title=""></span>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/11/08/JavaBean和Map之间的相互转化/　　作者: Willing" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -350,18 +366,9 @@
 
 <nav id="article-nav">
   
-    <a  href="/2018/09/21/C_计算素数/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          素数计算
-        
-      </div>
-    </a>
   
-  
-    <a  href="/2018/09/17/hexo搭建博客/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hexo+GitHub打造个人博客</div>
+    <a  href="/2018/11/07/IO/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">IO流操作</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -373,7 +380,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaBean和Map的相互转换"><span class="toc-number">1.</span> <span class="toc-text">JavaBean和Map的相互转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、JavaBean"><span class="toc-number">1.1.</span> <span class="toc-text">一、JavaBean</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-什么是JavaBean？"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.什么是JavaBean？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-内省机制"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.内省机制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、JavaBean和Map的相互转化"><span class="toc-number">1.2.</span> <span class="toc-text">二、JavaBean和Map的相互转化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-JavaBean转化为Map"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.JavaBean转化为Map</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-把Map转化为JavaBean"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.把Map转化为JavaBean</span></a></li></ol></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -446,13 +453,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2018/09/21/C_计算素数/" title="上一篇: 素数计算">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2018/09/17/hexo搭建博客/" title="下一篇: Hexo+GitHub打造个人博客">
+            <a  href="/2018/11/07/IO/" title="下一篇: IO流操作">
                 <i class="fa fa-angle-right"></i>
             </a>
         
