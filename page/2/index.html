@@ -194,7 +194,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/C语言/" style="font-size: 10px;">C语言</a> <a href="/tags/C语言练习/" style="font-size: 20px;">C语言练习</a> <a href="/tags/Flags/" style="font-size: 10px;">Flags</a> <a href="/tags/IO流/" style="font-size: 10px;">IO流</a> <a href="/tags/JDBC/" style="font-size: 10px;">JDBC</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javaweb/" style="font-size: 20px;">javaweb</a> <a href="/tags/jdbc/" style="font-size: 10px;">jdbc</a> <a href="/tags/反射/" style="font-size: 10px;">反射</a> <a href="/tags/多线程/" style="font-size: 20px;">多线程</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/集合/" style="font-size: 10px;">集合</a>
+                        <a href="/tags/C语言/" style="font-size: 10px;">C语言</a> <a href="/tags/C语言练习/" style="font-size: 15px;">C语言练习</a> <a href="/tags/Flags/" style="font-size: 10px;">Flags</a> <a href="/tags/IO流/" style="font-size: 10px;">IO流</a> <a href="/tags/JDBC/" style="font-size: 10px;">JDBC</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/javaweb/" style="font-size: 20px;">javaweb</a> <a href="/tags/jdbc/" style="font-size: 10px;">jdbc</a> <a href="/tags/反射/" style="font-size: 10px;">反射</a> <a href="/tags/多线程/" style="font-size: 15px;">多线程</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/集合/" style="font-size: 10px;">集合</a>
                     </div>
                 </section>
                 
@@ -270,6 +270,79 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-线程的生命周期" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/10/29/线程的生命周期/" class="article-date">
+      <time datetime="2018-10-29T09:39:26.636Z" itemprop="datePublished">2018-10-29</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/10/29/线程的生命周期/">线程的生命周期</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="线程的生命周期"><a href="#线程的生命周期" class="headerlink" title="线程的生命周期"></a>线程的生命周期</h3><p><img src="https://img2018.cnblogs.com/blog/1296856/201810/1296856-20181028173820056-1529747700.png" alt="img"> </p>
+<ul>
+<li><p>新建状态</p>
+<p>通过new创建线程对象，只是在堆中开辟了一块空间，线程并没有开始执行</p></li></ul>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/lang/">lang</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多线程/">多线程</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2018/10/29/线程的生命周期/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-生产者消费者模型" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -918,74 +991,9 @@
 
 
   
-    <article id="post-线程和并发--基础操作" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/09/17/线程和并发--基础操作/" class="article-date">
-      <time datetime="2018-09-17T15:56:00.570Z" itemprop="datePublished">2018-09-17</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/09/17/线程和并发--基础操作/">线程和并发--基础操作</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><strong>并发和并行</strong>是即相似又有区别：</p>
-<ul>
-<li>并行：指两个或多个事件在同一时刻发生；</li>
-<li>并发：指两个或多个事件在同一时间段内发生。</li></ul>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a   href="/2018/09/17/线程和并发--基础操作/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
