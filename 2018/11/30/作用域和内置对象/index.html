@@ -7,23 +7,20 @@
   
   
   
-  <title>素数计算 | Willing&#39;Blog</title>
+  <title>作用域和内置对象 | Willing&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.打印100~200之间的素数  素数：当一个数的因子只有1和它本身的时候就是素数。特殊也是最小的质数是2。">
-<meta name="keywords" content="C语言练习">
+  <meta name="description" content="一、Servlet的三大作用域对象   作用域名称 作用域类型 描述 获取对象方法     request HttpServletRequest 每一次请求都是一个新的request对象，用请求转发共享同一请求中的数据 service方法中的req   session HttpSession 会话对象，共享多次请求的数据 req.getSession()   application Servlet">
+<meta name="keywords" content="javaweb">
 <meta property="og:type" content="article">
-<meta property="og:title" content="素数计算">
-<meta property="og:url" content="http://yoursite.com/2018/09/21/C_计算素数/index.html">
+<meta property="og:title" content="作用域和内置对象">
+<meta property="og:url" content="http://yoursite.com/2018/11/30/作用域和内置对象/index.html">
 <meta property="og:site_name" content="Willing&#39;Blog">
-<meta property="og:description" content="1.打印100~200之间的素数  素数：当一个数的因子只有1和它本身的时候就是素数。特殊也是最小的质数是2。">
+<meta property="og:description" content="一、Servlet的三大作用域对象   作用域名称 作用域类型 描述 获取对象方法     request HttpServletRequest 每一次请求都是一个新的request对象，用请求转发共享同一请求中的数据 service方法中的req   session HttpSession 会话对象，共享多次请求的数据 req.getSession()   application Servlet">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2018/09/21/C_计算素数/乘法口诀表.png">
-<meta property="og:image" content="http://yoursite.com/2018/09/21/C_计算素数/判断闰年.png">
-<meta property="og:updated_time" content="2018-09-29T06:15:18.773Z">
+<meta property="og:updated_time" content="2018-11-30T14:41:12.334Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="素数计算">
-<meta name="twitter:description" content="1.打印100~200之间的素数  素数：当一个数的因子只有1和它本身的时候就是素数。特殊也是最小的质数是2。">
-<meta name="twitter:image" content="http://yoursite.com/2018/09/21/C_计算素数/乘法口诀表.png">
+<meta name="twitter:title" content="作用域和内置对象">
+<meta name="twitter:description" content="一、Servlet的三大作用域对象   作用域名称 作用域类型 描述 获取对象方法     request HttpServletRequest 每一次请求都是一个新的request对象，用请求转发共享同一请求中的数据 service方法中的req   session HttpSession 会话对象，共享多次请求的数据 req.getSession()   application Servlet">
   
     <link rel="alternative" href="/atom.xml" title="Willing&#39;Blog" type="application/atom+xml">
   
@@ -274,11 +271,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-C_计算素数" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-作用域和内置对象" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2018/09/21/C_计算素数/" class="article-date">
-      <time datetime="2018-09-21T07:44:24.243Z" itemprop="datePublished">2018-09-21</time>
+      <a  href="/2018/11/30/作用域和内置对象/" class="article-date">
+      <time datetime="2018-11-30T14:39:24.154Z" itemprop="datePublished">2018-11-30</time>
 </a>
 
     </div>
@@ -292,7 +289,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      素数计算
+      作用域和内置对象
     </h1>
   
 
@@ -308,7 +305,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C语言练习/">C语言练习</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javaweb/">javaweb</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -318,30 +315,139 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="1-打印100-200之间的素数"><a href="#1-打印100-200之间的素数" class="headerlink" title="1.打印100~200之间的素数"></a>1.打印100~200之间的素数</h2><blockquote>
-<p> 素数：当一个数的因子只有1和它本身的时候就是素数。特殊也是最小的质数是2。</p>
-</blockquote>
+        <h2 id="一、Servlet的三大作用域对象"><a href="#一、Servlet的三大作用域对象" class="headerlink" title="一、Servlet的三大作用域对象"></a>一、Servlet的三大作用域对象</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">作用域名称</th>
+<th style="text-align:center">作用域类型</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">获取对象方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">request</td>
+<td style="text-align:center">HttpServletRequest</td>
+<td style="text-align:center">每一次请求都是一个新的request对象，用请求转发共享同一请求中的数据</td>
+<td style="text-align:center">service方法中的req</td>
+</tr>
+<tr>
+<td style="text-align:center">session</td>
+<td style="text-align:center">HttpSession</td>
+<td style="text-align:center">会话对象，共享多次请求的数据</td>
+<td style="text-align:center">req.getSession()</td>
+</tr>
+<tr>
+<td style="text-align:center">application</td>
+<td style="text-align:center">ServletContext</td>
+<td style="text-align:center">作用于整个WEB应用,多次回话共享数据</td>
+<td style="text-align:center">[req.]getServletContext()</td>
+</tr>
+</tbody>
+</table>
 <a id="more"></a>
-<blockquote>
-<p>分析 ：一般的，拿一个数n(n!=2)除以2，除以3，直达除到n-1，若可以整除，说明n为质数,反之非质数</p>
-<p>当然，也不是一点得除到n-1，其实到n/2都可以了。</p>
-<p>甚至，其实到根号n都可以了。</p>
-<p>还有，除了2偶数都不可能是质数，那直接把偶数排除掉 for(i = 3;i&lt;n/2;i+=2)</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//求100-200之间的素数；</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">100</span>; i &lt;= <span class="number">200</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (IsPrime(i))&#123;</span><br><span class="line">			count++;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">" %d "</span>, i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, count);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">IsPrime</span><span class="params">(<span class="keyword">int</span> n)</span>  <span class="comment">//判断一个数是否为素数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (n &lt;= <span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">2</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++)&#123;</span><br><span class="line">		<span class="keyword">if</span> (n%i == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p> <a href="https://blog.csdn.net/PriestessofBirth/article/details/79435124" target="_blank" rel="noopener">作为参考</a>,等到后面研究算法的时候可能有更加优化的方案！</p>
-</blockquote>
-<h2 id="2-输出乘法口诀表"><a href="#2-输出乘法口诀表" class="headerlink" title="2.输出乘法口诀表"></a>2.输出乘法口诀表</h2><blockquote>
-<p> 用一对嵌套for循环可以轻易实现，注意格式化打印</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="comment">//打印乘法口诀表</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">10</span>; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span> ; j&lt;= i ; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d*%d=%d\t"</span>,j,i,i*j);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果：<img src="/2018/09/21/C_计算素数/乘法口诀表.png" title="乘法口诀表"></p>
-<h2 id="3-判断1000-2000年之间的闰年"><a href="#3-判断1000-2000年之间的闰年" class="headerlink" title="3.判断1000~2000年之间的闰年"></a>3.判断1000~2000年之间的闰年</h2><blockquote>
-<p> 闰年判断条件：四年一闰，一百年不闰。四百年又一闰。</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="comment">//判断1000年---2000年之间的闰年</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1000</span>; i &lt;= <span class="number">2000</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (IsLeapYear(i))&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d "</span>, i);</span><br><span class="line">			count++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"闰年有%d个\n"</span>,count);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">IsLeapYear</span><span class="params">(<span class="keyword">int</span> year)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> ((year % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; year % <span class="number">100</span> != <span class="number">0</span>) || (year % <span class="number">400</span> == <span class="number">0</span>))</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<img src="/2018/09/21/C_计算素数/判断闰年.png" title="判断闰年">
+<ul>
+<li>设置共享数据：作用域对象.setAttribute(String name,Object value);</li>
+<li>获取共享数据：Object value = 作用域对象.getAttribute(String name);</li>
+<li>删除共享数据: 作用域对象.removeAttribute(String name);</li>
+</ul>
+<h2 id="二、jsp的九大内置对象"><a href="#二、jsp的九大内置对象" class="headerlink" title="二、jsp的九大内置对象"></a>二、jsp的九大内置对象</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">内置对象名称</th>
+<th style="text-align:center">对象的类型</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">request</td>
+<td style="text-align:center">HttpServletRequest</td>
+<td style="text-align:center">请求对象</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">response</td>
+<td style="text-align:center">HttpServletResponse</td>
+<td style="text-align:center">响应对象</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">pageContext</td>
+<td style="text-align:center">PageContext</td>
+<td style="text-align:center">当前页面对象</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">session</td>
+<td style="text-align:center">HttpSession</td>
+<td style="text-align:center">当前回话对象</td>
+<td style="text-align:center">page指令默认session=true</td>
+</tr>
+<tr>
+<td style="text-align:center">exception</td>
+<td style="text-align:center">Throwable</td>
+<td style="text-align:center">当前jsp的异常信息</td>
+<td style="text-align:center">page指令的isErrorExption=”true”</td>
+</tr>
+<tr>
+<td style="text-align:center">application</td>
+<td style="text-align:center">ServletContext</td>
+<td style="text-align:center">当前WEB应用对象</td>
+<td style="text-align:center">服务器从启动到关闭只有一个对象</td>
+</tr>
+<tr>
+<td style="text-align:center">config</td>
+<td style="text-align:center">ServletCofig</td>
+<td style="text-align:center">配置对象</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">out</td>
+<td style="text-align:center">JspWriter</td>
+<td style="text-align:center">字符输出流对象</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">page</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:center">当前servlet对象</td>
+</tr>
+</tbody>
+</table>
+<h2 id="三、jsp的四大作用域对象"><a href="#三、jsp的四大作用域对象" class="headerlink" title="三、jsp的四大作用域对象"></a>三、jsp的四大作用域对象</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">作用域名称</th>
+<th style="text-align:center">作用域类型</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">pageContext</td>
+<td style="text-align:center">PageContext</td>
+<td style="text-align:center">当前jsp页面作用域对象</td>
+</tr>
+<tr>
+<td style="text-align:center">request</td>
+<td style="text-align:center">HttpServletRequest</td>
+<td style="text-align:center">当前请求作用域</td>
+</tr>
+<tr>
+<td style="text-align:center">session</td>
+<td style="text-align:center">HttpSession</td>
+<td style="text-align:center">当前会话作用域对象</td>
+</tr>
+<tr>
+<td style="text-align:center">application</td>
+<td style="text-align:center">ServletContext</td>
+<td style="text-align:center">当前WEB应用作用域对象</td>
+</tr>
+</tbody>
+</table>
+
       
     </div>
     
@@ -349,12 +455,12 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2018/09/21/C_计算素数/">素数计算</a></p>
+        <p><span>本文标题:</span><a  href="/2018/11/30/作用域和内置对象/">作用域和内置对象</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Willing 的个人博客">Willing</a></p>
-        <p><span>发布时间:</span>2018年09月21日 - 15时44分</p>
-        <p><span>最后更新:</span>2018年09月29日 - 14时15分</p>
+        <p><span>发布时间:</span>2018年11月30日 - 22时39分</p>
+        <p><span>最后更新:</span>2018年11月30日 - 22时41分</p>
         <p>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/09/21/C_计算素数/　　作者: Willing" title=""></span>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/11/30/作用域和内置对象/　　作者: Willing" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -365,18 +471,9 @@
 
 <nav id="article-nav">
   
-    <a  href="/2018/09/26/C语言练习1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          C--Test01
-        
-      </div>
-    </a>
   
-  
-    <a  href="/2018/09/21/先定一个小目标~/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">先定一个小目标~</div>
+    <a  href="/2018/11/29/cookie和session/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">cookie和session</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -388,7 +485,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-打印100-200之间的素数"><span class="toc-number">1.</span> <span class="toc-text">1.打印100~200之间的素数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-输出乘法口诀表"><span class="toc-number">2.</span> <span class="toc-text">2.输出乘法口诀表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-判断1000-2000年之间的闰年"><span class="toc-number">3.</span> <span class="toc-text">3.判断1000~2000年之间的闰年</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、Servlet的三大作用域对象"><span class="toc-number">1.</span> <span class="toc-text">一、Servlet的三大作用域对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、jsp的九大内置对象"><span class="toc-number">2.</span> <span class="toc-text">二、jsp的九大内置对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、jsp的四大作用域对象"><span class="toc-number">3.</span> <span class="toc-text">三、jsp的四大作用域对象</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -461,13 +558,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2018/09/26/C语言练习1/" title="上一篇: C--Test01">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2018/09/21/先定一个小目标~/" title="下一篇: 先定一个小目标~">
+            <a  href="/2018/11/29/cookie和session/" title="下一篇: cookie和session">
                 <i class="fa fa-angle-right"></i>
             </a>
         

@@ -271,6 +271,105 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-作用域和内置对象" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/11/30/作用域和内置对象/" class="article-date">
+      <time datetime="2018-11-30T14:39:24.154Z" itemprop="datePublished">2018-11-30</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/11/30/作用域和内置对象/">作用域和内置对象</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="一、Servlet的三大作用域对象"><a href="#一、Servlet的三大作用域对象" class="headerlink" title="一、Servlet的三大作用域对象"></a>一、Servlet的三大作用域对象</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">作用域名称</th>
+<th style="text-align:center">作用域类型</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">获取对象方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">request</td>
+<td style="text-align:center">HttpServletRequest</td>
+<td style="text-align:center">每一次请求都是一个新的request对象，用请求转发共享同一请求中的数据</td>
+<td style="text-align:center">service方法中的req</td>
+</tr>
+<tr>
+<td style="text-align:center">session</td>
+<td style="text-align:center">HttpSession</td>
+<td style="text-align:center">会话对象，共享多次请求的数据</td>
+<td style="text-align:center">req.getSession()</td>
+</tr>
+<tr>
+<td style="text-align:center">application</td>
+<td style="text-align:center">ServletContext</td>
+<td style="text-align:center">作用于整个WEB应用,多次回话共享数据</td>
+<td style="text-align:center">[req.]getServletContext()</td>
+</tr>
+</tbody>
+</table>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/lang/">lang</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javaweb/">javaweb</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2018/11/30/作用域和内置对象/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-cookie和session" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -623,79 +722,6 @@
 
 
   
-    <article id="post-注解" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/11/08/注解/" class="article-date">
-      <time datetime="2018-11-08T14:10:19.236Z" itemprop="datePublished">2018-11-08</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/11/08/注解/">java注解</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><h3 id="一、认识注解"><a href="#一、认识注解" class="headerlink" title="一、认识注解"></a>一、认识注解</h3><p>先看百度百科对java注解的解释：</p>
-<blockquote>
-<p>定义：注解（Annotation），也叫元数据。一种代码级别的说明。它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释。</p>
-<p>作用分类：</p></blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/lang/">lang</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/注解/">注解</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2018/11/08/注解/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
     <article id="post-JavaBean和Map之间的相互转化" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -751,6 +777,79 @@
       
         <p class="article-more-link">
           <a   href="/2018/11/08/JavaBean和Map之间的相互转化/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-注解" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/11/08/注解/" class="article-date">
+      <time datetime="2018-11-08T14:10:19.236Z" itemprop="datePublished">2018-11-08</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/11/08/注解/">java注解</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><h3 id="一、认识注解"><a href="#一、认识注解" class="headerlink" title="一、认识注解"></a>一、认识注解</h3><p>先看百度百科对java注解的解释：</p>
+<blockquote>
+<p>定义：注解（Annotation），也叫元数据。一种代码级别的说明。它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释。</p>
+<p>作用分类：</p></blockquote>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/lang/">lang</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/注解/">注解</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2018/11/08/注解/#more">查看更多 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -891,79 +990,6 @@
       
         <p class="article-more-link">
           <a   href="/2018/11/03/模拟斗地主在线发牌/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-反射" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/11/01/反射/" class="article-date">
-      <time datetime="2018-11-01T10:24:42.331Z" itemprop="datePublished">2018-11-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/11/01/反射/">java反射机制</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="1-什么是反射"><a href="#1-什么是反射" class="headerlink" title="1.什么是反射"></a>1.什么是反射</h3><blockquote>
-<p>Everything is object!</p>
-</blockquote>
-<p>这在java中可以说是一个公理，对象都可以抽象为类，那么类在java中应该也是一种对象，他其实是属于一个叫做Class类的字节码对象，它应该描述的是所有的类，具有所有的类的相同方法等。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/lang/">lang</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/反射/">反射</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2018/11/01/反射/#more">查看更多 >></a>
         </p>
       
       <div class="clearfix"></div>
