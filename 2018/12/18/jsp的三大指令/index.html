@@ -7,22 +7,19 @@
   
   
   
-  <title>线程的生命周期 | Willing&#39;Blog</title>
+  <title>Willing&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="线程的生命周期   新建状态 通过new创建线程对象，只是在堆中开辟了一块空间，线程并没有开始执行">
-<meta name="keywords" content="多线程">
+  <meta name="description" content="jsp的三大指令1.page指令 语法 1&amp;lt;% @  指令  属性名 = &quot;属性值&quot;  %&amp;gt;  属性">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线程的生命周期">
-<meta property="og:url" content="http://yoursite.com/2018/10/29/线程的生命周期/index.html">
+<meta property="og:title" content="Willing&#39;Blog">
+<meta property="og:url" content="http://yoursite.com/2018/12/18/jsp的三大指令/index.html">
 <meta property="og:site_name" content="Willing&#39;Blog">
-<meta property="og:description" content="线程的生命周期   新建状态 通过new创建线程对象，只是在堆中开辟了一块空间，线程并没有开始执行">
+<meta property="og:description" content="jsp的三大指令1.page指令 语法 1&amp;lt;% @  指令  属性名 = &quot;属性值&quot;  %&amp;gt;  属性">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1296856/201810/1296856-20181028173820056-1529747700.png">
-<meta property="og:updated_time" content="2018-10-29T09:40:32.127Z">
+<meta property="og:updated_time" content="2018-12-18T13:06:27.826Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线程的生命周期">
-<meta name="twitter:description" content="线程的生命周期   新建状态 通过new创建线程对象，只是在堆中开辟了一块空间，线程并没有开始执行">
-<meta name="twitter:image" content="https://img2018.cnblogs.com/blog/1296856/201810/1296856-20181028173820056-1529747700.png">
+<meta name="twitter:title" content="Willing&#39;Blog">
+<meta name="twitter:description" content="jsp的三大指令1.page指令 语法 1&amp;lt;% @  指令  属性名 = &quot;属性值&quot;  %&amp;gt;  属性">
   
     <link rel="alternative" href="/atom.xml" title="Willing&#39;Blog" type="application/atom+xml">
   
@@ -273,11 +270,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-线程的生命周期" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-jsp的三大指令" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2018/10/29/线程的生命周期/" class="article-date">
-      <time datetime="2018-10-29T09:39:26.636Z" itemprop="datePublished">2018-10-29</time>
+      <a  href="/2018/12/18/jsp的三大指令/" class="article-date">
+      <time datetime="2018-12-18T13:00:38.276Z" itemprop="datePublished">2018-12-18</time>
 </a>
 
     </div>
@@ -287,79 +284,39 @@
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      线程的生命周期
-    </h1>
-  
-
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/lang/">lang</a>
-    </div>
-
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多线程/">多线程</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="线程的生命周期"><a href="#线程的生命周期" class="headerlink" title="线程的生命周期"></a>线程的生命周期</h3><p><img src="https://img2018.cnblogs.com/blog/1296856/201810/1296856-20181028173820056-1529747700.png" alt="img"> </p>
-<ul>
-<li><p>新建状态</p>
-<p>通过new创建线程对象，只是在堆中开辟了一块空间，线程并没有开始执行</p>
+        <h2 id="jsp的三大指令"><a href="#jsp的三大指令" class="headerlink" title="jsp的三大指令"></a>jsp的三大指令</h2><h3 id="1-page指令"><a href="#1-page指令" class="headerlink" title="1.page指令"></a>1.page指令</h3><ul>
+<li><p>语法</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;% @  指令  属性名 = <span class="string">"属性值"</span>  %&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>属性</p>
 <a id="more"></a>
-</li>
-<li><p>可运行状态</p>
-<p>用线程对象调用start()方法</p>
 <ul>
-<li><p>就绪状态</p>
-<p>等待cpu调度，线程并没有开始执行</p>
-</li>
-<li><p>运行状态</p>
-<p>获得CPU的调度，开始执行，如果有多个CPU，允许多个线程并行执行</p>
-</li>
-</ul>
-</li>
-<li><p>等待状态</p>
-<p>同步锁调用wait方法，把当前对象放到等待池中，等待唤醒notify</p>
-</li>
-<li><p>计时等待</p>
-<p>sleep方法，进行休眠，休眠过程中并不释放同步锁。带参数的wait方法，如果没有被其他线程唤醒，就等待指定时间自动苏醒</p>
-</li>
-<li><p>阻塞状态</p>
-<p>正在运行的线程因为某些原因放弃CPU,暂时停止运行,就会进入阻塞状态.         此时JVM不会给线程分配CPU,直到线程重新进入就绪状态,才有机会转到运行状态.         阻塞状态只能先进入就绪状态,不能直接进入运行状态，阻塞状态的两种情况:       </p>
-<ul>
-<li>当A线程处于运行过程时,试图获取同步锁时,却被B线程获取.此时JVM把当前A线程存到对象的锁池中,A线程进入阻塞状态.<br>   当线程处于运行过程时,发出了IO请求时,此时进入阻塞状态.    </li>
-</ul>
-</li>
-<li><p>终止状态</p>
-<p>通常称为死亡状态，表示线程终止 </p>
-<ul>
-<li>正常执行完run方法而退出(正常死亡)</li>
-<li>遇到异常而退出(出现异常之后,程序就会中断)(意外死亡).</li>
+<li><strong>language:</strong>表示当前jsp页面编写的脚本语言</li>
+<li><strong>contentType:</strong>表示当前jsp页面输出的MIME类型和编码格式   翻译到Servlet代码中 就是response.setContentType(“text/html; charset=UTF-8”);<br> <strong>pageEncoding:</strong>表示的还是jsp的编码.  当pagePage属性和contentType同时出现时 以contentType中的编码为准    </li>
+<li><strong>errorPage:</strong>  当前jsp代码出现错误会跳转到那个页面,  属性值是需要跳转到的资源路径</li>
+<li><strong>isErrorPage:</strong> 标注当前页面是不是处理错误的页面, 默认为false表示不是错误页面</li>
+<li><strong>session:</strong> 标注当前页面是是作用于一次回话当中,默认为true</li>
+<li><strong>import:</strong> 导入jsp中包含的java代码所依赖的类,相当于java中的import语句</li>
 </ul>
 </li>
 </ul>
-<h3 id="联合线程"><a href="#联合线程" class="headerlink" title="联合线程"></a>联合线程</h3><p>线程的join方法表示一个线程等待另一个线程完成后才执行。join方法被调用之后，线程对象处于阻塞状态。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Join</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">50</span>; i++)&#123;</span><br><span class="line">			System.out.println(<span class="string">"Join"</span>+<span class="string">"--"</span> + i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JoinDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		Join j = <span class="keyword">new</span> Join();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">50</span>;i++)&#123;</span><br><span class="line">			System.out.println(<span class="string">"main"</span> + <span class="string">"--"</span> + i);</span><br><span class="line">			<span class="keyword">if</span>(i == <span class="number">10</span>)&#123;</span><br><span class="line">				j.start();</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(i == <span class="number">20</span>)&#123;</span><br><span class="line">				j.join();<span class="comment">//强制执行，执行完该线程再执行主线程</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="后台线程"><a href="#后台线程" class="headerlink" title="后台线程"></a>后台线程</h3><p>在后台运行的线程，其目的是为其他线程提供服务，也称为“守护线程”。JVM的垃圾回收线程就是典型的后台线程。若所有的前台线程都死亡，后台线程自动死亡,前台线程没有结束,后台线程是不会结束的。测试线程对象是否为后台线程：使用thread.isDaemon()。前台线程创建的线程默认是前台线程,可以通过setDaenon(true)方法设置为后台线程,并且当且仅当后台线程创建的新线程时，新线程是后台线程。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DeamonDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//判断main线程是否后台线程</span></span><br><span class="line"><span class="comment">//		boolean b = Thread.currentThread().isDaemon();</span></span><br><span class="line"><span class="comment">//		System.out.println(b);</span></span><br><span class="line">		<span class="comment">//设置main线程为后台线程,报错，线程一旦创建就不能修改为后台线程</span></span><br><span class="line">		<span class="comment">//Thread.currentThread().setDaemon(true);</span></span><br><span class="line">		<span class="comment">//创建并启动Demo线程,设置为后台线程</span></span><br><span class="line">		<span class="comment">/**</span></span><br><span class="line"><span class="comment">		 * 此时Demo为守护线程，当所有的前台线程都执行完毕后，守护线程自动死亡</span></span><br><span class="line"><span class="comment">		 * 在这会发现，当主线程执行完毕后，守护线程Demo没有执行完自己的方法都结束了</span></span><br><span class="line"><span class="comment">		 * 但让也不一定守护线程立马就停止了，也要有反应时间</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		Demo d = <span class="keyword">new</span> Demo();</span><br><span class="line">		d.setDaemon(<span class="keyword">true</span>);</span><br><span class="line">		d.start();</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">20</span>; i++) &#123;</span><br><span class="line">			System.out.println(<span class="string">"main"</span> + <span class="string">"--"</span> + i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">50</span>;i++)&#123;</span><br><span class="line">			System.out.println(<span class="string">"Demo"</span> + <span class="string">"--"</span> + i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="线程的优先级"><a href="#线程的优先级" class="headerlink" title="线程的优先级"></a>线程的优先级</h3><p>每个线程都有优先级，优先级的高低只和线程获得执行机会的次数多少有关,并非线程优先级越高的就一定先执行，哪个线程的先运行取决于CPU的调度。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *	线程的优先级</span></span><br><span class="line"><span class="comment"> *	 int getPriority() :返回线程的优先级。 </span></span><br><span class="line"><span class="comment"> * 	void setPriority(int newPriority) : 更改线程的优先级。 </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">priority</span> </span>&#123;</span><br><span class="line">	<span class="meta">@SuppressWarnings</span>(<span class="string">"static-access"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//优先级的默认值为5</span></span><br><span class="line">		System.out.println(Thread.currentThread().getPriority());<span class="comment">//5</span></span><br><span class="line">		<span class="comment">//更改优先级(优先级可以在线程创建之后更改)</span></span><br><span class="line">		Thread.currentThread().setPriority(<span class="number">7</span>);</span><br><span class="line">		System.out.println(Thread.currentThread().getPriority());<span class="comment">//7</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//创建A线程，查看A线程的优先级，</span></span><br><span class="line">		A a = <span class="keyword">new</span> A();</span><br><span class="line">		a.start();</span><br><span class="line">		System.out.println(a.getPriority());<span class="comment">//7</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//Thread类中也有三个常量</span></span><br><span class="line">		System.out.println(a.MAX_PRIORITY);<span class="comment">//10</span></span><br><span class="line">		System.out.println(a.MIN_PRIORITY);<span class="comment">//5</span></span><br><span class="line">		System.out.println(a.NORM_PRIORITY);<span class="comment">//1</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-include指令"><a href="#2-include指令" class="headerlink" title="2.include指令"></a>2.include指令</h3><ul>
+<li><p>静态包含</p>
+<p>在把jsp翻译成java代码时期就已经将包含的资源合并起来了，所以最终的xx_jsp.java文件只有一个</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@include</span> file=<span class="string">"被包含的资源文件名"</span> %&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>动态包含</p>
+<p>在运行时期才把所包含的文件合并起来,所以最终的xx_jsp.java文件有多个。动态包含可以传递数据,   静态包含不能</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:include page=<span class="string">"被包含的资源文件名"</span>&gt;</span><br><span class="line">	&lt;jsp:param value=<span class="string">""</span> name=<span class="string">""</span>/&gt;</span><br><span class="line">&lt;/jsp:include&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>3.taglib</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib uri=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> prefix=<span class="string">"c"</span>%&gt;</span><br></pre></td></tr></table></figure>
+<p>c相当于是起了一个别名</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">相当于<span class="keyword">for</span>-each语句</span><br><span class="line">&lt;c:forEach items=<span class="string">"$&#123;list&#125;"</span> var=<span class="string">"pro"</span> varStatus=<span class="string">"vs"</span>&gt;</span><br><span class="line">		<span class="comment">//迭代</span></span><br><span class="line">&lt;/c:forEach&gt;</span><br><span class="line"></span><br><span class="line">相当<span class="keyword">switch</span>语句</span><br><span class="line">&lt;c:choose&gt;</span><br><span class="line">    &lt;c:when test="$&#123;pro.dir_id == 1&#125;"&gt;鼠标&lt;/c:when&gt;</span><br><span class="line">    &lt;c:when test="$&#123;pro.dir_id == 2&#125;"&gt;无线鼠标&lt;/c:when&gt;</span><br><span class="line">    &lt;c:when test="$&#123;pro.dir_id == 3&#125;"&gt;有线鼠标&lt;/c:when&gt;</span><br><span class="line">    &lt;c:when test="$&#123;pro.dir_id == 4&#125;"&gt;游戏鼠标&lt;/c:when&gt;</span><br><span class="line">&lt;/c:choose&gt;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -368,12 +325,12 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2018/10/29/线程的生命周期/">线程的生命周期</a></p>
+        <p><span>本文标题:</span><a  href="/2018/12/18/jsp的三大指令/"></a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Willing 的个人博客">Willing</a></p>
-        <p><span>发布时间:</span>2018年10月29日 - 17时39分</p>
-        <p><span>最后更新:</span>2018年10月29日 - 17时40分</p>
+        <p><span>发布时间:</span>2018年12月18日 - 21时00分</p>
+        <p><span>最后更新:</span>2018年12月18日 - 21时06分</p>
         <p>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/10/29/线程的生命周期/　　作者: Willing" title=""></span>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/12/18/jsp的三大指令/　　作者: Willing" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -384,18 +341,9 @@
 
 <nav id="article-nav">
   
-    <a  href="/2018/11/01/反射/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          java反射机制
-        
-      </div>
-    </a>
   
-  
-    <a  href="/2018/10/27/生产者消费者模型/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">生产者和消费者模型</div>
+    <a  href="/2018/12/11/排序算法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">八大排序算法</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -407,7 +355,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#线程的生命周期"><span class="toc-number">1.</span> <span class="toc-text">线程的生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#联合线程"><span class="toc-number">2.</span> <span class="toc-text">联合线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#后台线程"><span class="toc-number">3.</span> <span class="toc-text">后台线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程的优先级"><span class="toc-number">4.</span> <span class="toc-text">线程的优先级</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#jsp的三大指令"><span class="toc-number">1.</span> <span class="toc-text">jsp的三大指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-page指令"><span class="toc-number">1.1.</span> <span class="toc-text">1.page指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-include指令"><span class="toc-number">1.2.</span> <span class="toc-text">2.include指令</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -480,13 +428,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2018/11/01/反射/" title="上一篇: java反射机制">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2018/10/27/生产者消费者模型/" title="下一篇: 生产者和消费者模型">
+            <a  href="/2018/12/11/排序算法/" title="下一篇: 八大排序算法">
                 <i class="fa fa-angle-right"></i>
             </a>
         
